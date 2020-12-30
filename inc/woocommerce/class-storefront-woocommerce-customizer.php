@@ -24,7 +24,7 @@ if ( ! class_exists( 'Storefront_WooCommerce_Customizer' ) ) :
 		 * @return void
 		 */
 		public function __construct() {
-			add_action( 'customize_register', array( $this, 'customize_register' ), 10 );
+			//add_action( 'customize_register', array( $this, 'customize_register' ), 10 );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_customizer_css' ), 130 );
 			add_filter( 'storefront_setting_default_values', array( $this, 'setting_default_values' ) );
 		}
