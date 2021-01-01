@@ -142,6 +142,8 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 			wp_enqueue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce/woocommerce.css', array( 'storefront-style', 'storefront-icons' ), $storefront_version );
+			//todo vsv: refacto ca
+			wp_enqueue_style( 'storefront-woocommerce-customizer-style', get_template_directory_uri() . '/assets/css/woocommerce/woocommerce_customizer.css', array( 'storefront-woocommerce-style' ), $storefront_version );
 
 			wp_register_script( 'storefront-header-cart', get_template_directory_uri() . '/assets/js/woocommerce/header-cart' . $suffix . '.js', array(), $storefront_version, true );
 			wp_enqueue_script( 'storefront-header-cart' );

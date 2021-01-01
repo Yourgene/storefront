@@ -233,8 +233,6 @@ if ( ! class_exists( 'Storefront' ) ) :
 			}
 
 			wp_enqueue_script( 'jquery-pep', get_template_directory_uri() . '/assets/js/vendor/pep.min.js', array(), '0.4.3', true );
-
-			//todo vsv: qui utilise footer.js  ?
 		}
 
 		/**

@@ -26,7 +26,7 @@ if ( ! class_exists( 'Storefront_Customizer' ) ) :
 			//add_action( 'customize_register', array( $this, 'customize_register' ), 10 );
 			//add_filter( 'body_class', array( $this, 'layout_class' ) );
 			//todo vsv: mettre dans un css ?
-			add_action( 'wp_enqueue_scripts', array( $this, 'add_customizer_css' ), 130 );
+			//add_action( 'wp_enqueue_scripts', array( $this, 'add_customizer_css' ), 130 );
 			//add_action( 'customize_controls_print_styles', array( $this, 'customizer_custom_control_css' ) );
 			//add_action( 'customize_register', array( $this, 'edit_default_customizer_settings' ), 99 );
 			//add_action( 'enqueue_block_assets', array( $this, 'block_editor_customizer_css' ) );
