@@ -11,12 +11,7 @@
     "build": "grunt deploy --env=production",
     "build:dev": "grunt",
     "css": "grunt css",
-    "start": "grunt watch",
-    "labels:dry": "github-label-sync --labels ./.github/label-sync-config.json --allow-added-labels --dry-run woocommerce/storefront",
-    "labels:sync": "github-label-sync --labels ./.github/label-sync-config.json --allow-added-labels woocommerce/storefront",
-    "wp-env": "wp-env",
-    "e2e": "jest",
-    "e2e:ci": "npm run wp-env start && npm run wp-env run tests-cli wp theme activate storefront && npm run e2e"
+    "start": "grunt watch"
   },
   "jest": {
     "preset": "jest-puppeteer",

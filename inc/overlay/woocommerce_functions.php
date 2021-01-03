@@ -11,6 +11,11 @@ add_filter( 'woocommerce_account_menu_items', 'custom_my_account_menu_items' );
 
 
 /**
+ * Désactive les Produits Apparentés / related products des fiches produits
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products',20);
+
+/**
  * add guide des tailles section in product page
  */
 add_filter( 'woocommerce_product_tabs', 'guide_taille_tab' );

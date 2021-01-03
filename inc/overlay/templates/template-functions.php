@@ -24,6 +24,5 @@ function get_image_data_by_slug( $slug ) {
 		'url' => wp_get_attachment_url($header->ID),
 		'alt' => get_alt_of_image_by_slug($header->ID)
 	];
-
 	return $image;
 }

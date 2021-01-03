@@ -29,8 +29,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 			add_filter( 'body_class', array( $this, 'body_classes' ) );
 			add_filter( 'wp_page_menu_args', array( $this, 'page_menu_args' ) );
 			add_filter( 'navigation_markup_template', array( $this, 'navigation_markup_template' ) );
-			//todo vsv: ca ne sert a rien les embed sur le site
-			add_action( 'enqueue_embed_scripts', array( $this, 'print_embed_styles' ) );
+			//add_action( 'enqueue_embed_scripts', array( $this, 'print_embed_styles' ) );
 		}
 
 		/**
