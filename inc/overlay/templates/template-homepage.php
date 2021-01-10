@@ -14,11 +14,15 @@ function overlay_homepage_intro_products() {
 	$products_image = $products_group[AcfConstants::SERVICES_IMAGE];
 	$product_page_url = get_permalink(get_page_by_path(SiteConstants::PRODUCTS_PAGE_SLUG ));
 	?>
-		<section class="">
-			<img class="image-responsive" src="<?php echo($products_image['url'])?>" alt="<?php echo($products_image['alt'])?>">
-			<h2 class="section-title"><?php echo $products_title ?></h2>
-			<div><?php echo($products_content)?></div>
-			<a class="link-button card-button" href="<?php echo($product_page_url)?>">En savoir plus &rarr;</a>
+		<section class="card-grid">
+			<h2><?php echo $products_title ?></h2>
+			<div class="img">
+				<img class="" src="<?php echo($products_image['url'])?>" alt="<?php echo($products_image['alt'])?>">
+			</div>
+			<div class="content">
+				<?php echo($products_content)?>
+				<a class="button" href="<?php echo($product_page_url)?>">En savoir plus &rarr;</a>
+			</div>
 		</section>
 	<?php
 }

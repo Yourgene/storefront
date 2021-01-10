@@ -32,3 +32,16 @@ function contenu_guide_tailles() {
 	echo '<h2>Guide des tailles</h2>';
 	echo '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '"/>';
 }
+
+/**
+ * Disable WooCommerce block styles (back-end).
+ * And Gutemberg
+ */
+function slug_disable_woocommerce_block_editor_styles() {
+	wp_deregister_style( 'wc-block-editor' );
+	wp_deregister_style( 'wc-block-style' );
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+
+}
+add_action( 'enqueue_block_assets', 'slug_disable_woocommerce_block_editor_styles', 1, 1 );

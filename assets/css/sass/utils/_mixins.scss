@@ -69,3 +69,7 @@
 	// We also need word-wrap and for IE.
 	-ms-word-break: break-all;
 }
+
+@import 'mixins/box_shadows';
+
+@import 'mixins/responsive';

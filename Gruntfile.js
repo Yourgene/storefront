@@ -138,7 +138,10 @@ module.exports = function( grunt ) {
 					'assets/css/base/*.scss',
 					'assets/css/components/*.scss',
 					'assets/css/sass/utils/*.scss',
-					'assets/css/sass/vendors/*.scss'
+					'assets/css/sass/vendors/*.scss',
+					'assets/css/overlay/*.scss',
+					'assets/css/overlay/_frontpage.scss',
+					'assets/css/utils/**/*.scss',
 				],
 				tasks: [
 					'sass',

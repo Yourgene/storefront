@@ -38,3 +38,11 @@ $susy: (
 		box-sizing: false
 	)
 );
+
+//Spacing
+@import 'variables/spacing';
+
+//Customizer color variables
+@import 'variables/colors';
+
+@import 'variables/dimensions';
