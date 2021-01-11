@@ -126,6 +126,24 @@ section.card-grid{
   }
 }
 
+//to center the shop button
+//maybe move it elsewhere
+.container-center-button{
+  display:flex;
+  justify-content: center;
+  margin-bottom: $spacing-10;
+}
+
+//about us
+.about-us-homepage, .contact-us-homepage{
+  h2{
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+
 
 
 

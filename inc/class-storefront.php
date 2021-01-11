@@ -301,7 +301,16 @@ if ( ! class_exists( 'Storefront' ) ) :
 			}
 
 			// If our main sidebar doesn't contain widgets, adjust the layout to be full-width.
-			if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+            // vsv : pour nos sites, on ajoute une condition sur la sidebar
+			// elle ne doit apparaitre que sur la boutique
+			if ( ! is_active_sidebar( 'sidebar-1' ) ||
+                 (is_active_sidebar( 'sidebar-1' )
+                    && !is_shop()
+                    && !is_product_taxonomy()
+                    && !is_product_category()
+                    && !is_product_tag()
+                )
+            ) {
 				$classes[] = 'storefront-full-width-content';
 			}
 

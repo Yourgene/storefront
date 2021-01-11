@@ -17,6 +17,7 @@ include 'templates/template-homepage.php';
 //todo: mettre seo
 //todo : refaire la page d'accueil
 //todo: faire le footer
+//todo: se mettre a jour avec le repo parent
 
 /**
  * Storefront settings

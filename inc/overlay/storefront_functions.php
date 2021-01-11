@@ -38,17 +38,29 @@ remove_action( 'homepage', 'storefront_popular_products', 50 );
 remove_action( 'homepage', 'storefront_on_sale_products', 60 );
 //remove_action( 'homepage', 'storefront_best_selling_products', 70 );
 
-//Edit number of products on best sellings products, on home page
+// Edit number of products on best sellings products, on home page
+// Also give it another name
 add_filter('storefront_best_selling_products_args', 'edit_best_sellings_args');
 function edit_best_sellings_args($args){
 	$args['limit'] = 3;
 	$args['columns'] = 3;
+	$args['title'] = 'Découvrez nos produits';
 
 	return $args;
 }
 
-//Remove the_content() after header
+// Remove the_content() after header
 remove_action( 'storefront_homepage', 'storefront_page_content', 20 );
 
 // Add content between header and featured products
 add_action( 'homepage', 'overlay_homepage_intro_products', 20 );
+add_action( 'storefront_homepage_after_best_selling_products_title', 'overlay_homepage_button_to_shop', 5 );
+add_action( 'homepage', 'overlay_homepage_a_propos_de_nous', 75 );
+add_action( 'homepage', 'overlay_homepage_contact', 80 );
+
+// Remove sorting dropdown at the bottom of page
+// maybe keep it for final release
+remove_action( 'woocommerce_after_shop_loop', 'storefront_sorting_wrapper', 9 );
+remove_action( 'woocommerce_after_shop_loop', 'storefront_sorting_wrapper_close', 31 );
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );

@@ -26,3 +26,36 @@ function overlay_homepage_intro_products() {
 		</section>
 	<?php
 }
+
+// Added by add_action( 'homepage', 'overlay_homepage_button_to_shop', 80 );
+// in storefront_actions
+function overlay_homepage_button_to_shop() {
+	$shop_page_url = wc_get_page_permalink( 'shop' );
+	?>
+        <div class="container-center-button">
+            <a class="button" href="<?php echo($shop_page_url)?>">Explorer la boutique &rarr;</a>
+        </div>
+	<?php
+}
+
+// Added by add_action( 'homepage', 'overlay_homepage_a_propos_de_nous', 75 );
+// in storefront_actions
+function overlay_homepage_a_propos_de_nous() {
+	?>
+    <section class="about-us-homepage">
+        <h2>A propos de nous</h2>
+	    <p>A faire</p>
+    </section>
+	<?php
+}
+
+// Added by add_action( 'homepage', 'overlay_homepage_contact', 80 );
+// in storefront_actions
+function overlay_homepage_contact() {
+	?>
+    <section class="contact-us-homepage">
+        <h2>Nous contacter</h2>
+        <p>A faire</p>
+    </section>
+	<?php
+}

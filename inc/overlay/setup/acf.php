@@ -16,6 +16,8 @@ add_filter('acf/settings/remove_wp_meta_box', '__return_true');
 //------------------------------------------------------------------------------------
 function init_all(){
 	init_front_page();
+
+	init_seo();
 }
 
 function init_front_page(){
@@ -44,17 +46,46 @@ function init_front_page(){
 	//Front Page fields
 	$frontPage = new FieldsBuilder('champs_fonctionnels_accueil', [
 		'label' => 'Champs Fonctionnels',
+
 		'hide_on_screen' => [
 			0 => 'the_content',
 		],
 	]);
 	$frontPage
 		->addTab('Introduction produit')
-		->addFields($home_products);
+			->addFields($home_products)
+		->addTab('A propos de nous')
+		->addTab('Contact');
 
 	$frontPage
 		->setLocation('page_template', '==', 'template-homepage.php');
 
 	acf_add_local_field_group($frontPage->build());
+}
+
+function init_seo(){
+	$seo_group = new FieldsBuilder('seo_fields');
+	$seo_group
+		->addGroup(AcfConstants::SEO_GROUP, ['label' => ''])
+		->addText(AcfConstants::SEO_TITLE, ['label' => 'Titre'])
+		->addTextarea(AcfConstants::SEO_META_DESCRIPTION, ['label' => 'Meta Description']);
+
+
+	$seo_page = new FieldsBuilder('seo_page', [
+		'title' => 'Champs Techniques',
+		'menu_order' => '10'
+	]);
+
+	$seo_page
+		->addTab('seo', [
+			'label' => 'SEO'
+		])
+		->addFields($seo_group);
+
+
+	$seo_page
+		->setLocation('post_type', '!=', 'dummy');
+
+	acf_add_local_field_group($seo_page->build());
 }
 
