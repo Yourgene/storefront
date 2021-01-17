@@ -45,3 +45,11 @@ function slug_disable_woocommerce_block_editor_styles() {
 
 }
 add_action( 'enqueue_block_assets', 'slug_disable_woocommerce_block_editor_styles', 1, 1 );
+
+/**
+ * Removes strength meter
+ */
+function remove_password_strength() {
+	wp_dequeue_script( 'wc-password-strength-meter' );
+}
+add_action( 'wp_print_scripts', 'remove_password_strength', 10 );
